@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Início";
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 text-primary fw-bold">Sistema de Estoque e Vendas</h1>
+        <p class="lead text-secondary">Gerencie seus produtos, vendas e visualize relatórios em um só lugar.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+            <a href="/Produtos" class="text-decoration-none">
+                <div class="card shadow-sm h-100 border-0 hover-shadow text-center p-4">
+                    <div class="fs-1 mb-2">📦</div>
+                    <h5 class="card-title text-dark">Produtos</h5>
+                    <p class="text-muted">Cadastrar e gerenciar estoque de produtos.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/Vendas" class="text-decoration-none">
+                <div class="card shadow-sm h-100 border-0 hover-shadow text-center p-4">
+                    <div class="fs-1 mb-2">💰</div>
+                    <h5 class="card-title text-dark">Vendas</h5>
+                    <p class="text-muted">Registrar novas vendas e consultar histórico.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/Dashboard" class="text-decoration-none">
+                <div class="card shadow-sm h-100 border-0 hover-shadow text-center p-4">
+                    <div class="fs-1 mb-2">📊</div>
+                    <h5 class="card-title text-dark">Dashboard</h5>
+                    <p class="text-muted">Visualizar métricas e relatórios em tempo real.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hover-shadow:hover {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        transition: box-shadow 0.3s ease;
+    }
+</style>

@@ -1,0 +1,65 @@
+﻿@model SEV.Models.Venda
+
+@{
+    ViewData["Title"] = "Registrar Nova Venda";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white d-flex align-items-center">
+            <i class="bi bi-cash-stack fs-3 me-2"></i>
+            <h2 class="mb-0">@ViewData["Title"]</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create" id="vendaForm" method="post" novalidate>
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="ProdutoId" class="form-label fw-bold"></label>
+                    <select asp-for="ProdutoId" class="form-select select2" asp-items="ViewBag.ProdutosList">
+                        <option value="">Selecione um produto</option>
+                    </select>
+                    <span asp-validation-for="ProdutoId" class="text-danger"></span>
+                    <div class="form-text">Apenas produtos com estoque disponível são listados.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Quantidade" class="form-label fw-bold"></label>
+                    <input asp-for="Quantidade" type="number" min="1" class="form-control" />
+                    <span asp-validation-for="Quantidade" class="text-danger"></span>
+                    <div id="estoqueInfo" class="form-text"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Data" class="form-label fw-bold"></label>
+                    <input asp-for="Data" class="form-control" readonly />
+                    <span asp-validation-for="Data" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-check-circle me-1"></i>Registrar Venda
+                </button>
+                <a asp-action="Index" class="btn btn-secondary ms-2">
+                    <i class="bi bi-arrow-left me-1"></i>Voltar
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <style>
+        .select2-container .select2-selection--single {
+            height: 38px;
+            padding: 5px 12px;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 38px;
+        }
+    </style>
+}
+
+
+

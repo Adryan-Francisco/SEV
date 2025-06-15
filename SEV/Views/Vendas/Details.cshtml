@@ -1,0 +1,35 @@
+﻿@model SEV.Models.Venda
+
+@{
+    ViewData["Title"] = "Detalhes da Venda";
+}
+
+<div class="container mt-5">
+    <h2 class="text-primary mb-4 d-flex align-items-center">
+        <i class="bi bi-receipt me-2"></i> Detalhes da Venda
+    </h2>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <dl class="row mb-0">
+                <dt class="col-sm-3 text-muted">Produto</dt>
+                <dd class="col-sm-9 fw-semibold">@Model.Produto?.Nome</dd>
+
+                <dt class="col-sm-3 text-muted">Quantidade</dt>
+                <dd class="col-sm-9 fw-semibold">@Model.Quantidade</dd>
+
+                <dt class="col-sm-3 text-muted">Data</dt>
+                <dd class="col-sm-9 fw-semibold">@Model.Data.ToString("dd/MM/yyyy")</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4 d-flex gap-2">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">
+            <i class="bi bi-pencil me-1"></i> Editar
+        </a>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left me-1"></i> Voltar
+        </a>
+    </div>
+</div>

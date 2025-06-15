@@ -1,0 +1,60 @@
+﻿@model ErrorViewModel
+
+@{
+    ViewData["Title"] = "Erro";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm border-danger">
+        <div class="card-header bg-danger text-white">
+            <h3 class="mb-0">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>Ocorreu um Erro
+            </h3>
+        </div>
+        <div class="card-body">
+            <p class="lead text-danger">
+                Um erro ocorreu durante o processamento da sua requisição.
+            </p>
+
+            @if (Model?.ShowRequestId == true)
+            {
+                <div class="alert alert-light border mt-3">
+                    <strong>ID da Requisição:</strong> <code>@Model.RequestId</code>
+                </div>
+            }
+
+            <div class="mt-4">
+                <h5>Ambiente de Desenvolvimento</h5>
+                <p>
+                    Para exibir mais detalhes sobre o erro, altere para o ambiente <strong>Development</strong>.
+                </p>
+                <p class="text-muted">
+                    <i class="bi bi-info-circle me-1"></i>
+                    O ambiente <strong>Development</strong> não deve ser habilitado em produção. Ele pode exibir informações sensíveis das exceções para os usuários finais.
+                </p>
+                <p>
+                    Para habilitar localmente, defina a variável de ambiente <code>ASPNETCORE_ENVIRONMENT</code> como <code>Development</code> e reinicie a aplicação.
+                </p>
+            </div>
+        </div>
+        <div class="card-footer text-end">
+            <a href="/" class="btn btn-outline-secondary">
+                <i class="bi bi-house me-1"></i>Voltar para o Início
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .lead {
+            font-size: 1.25rem;
+        }
+        code {
+            font-size: 0.95rem;
+            background-color: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.3rem;
+        }
+    </style>
+}

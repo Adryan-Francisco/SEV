@@ -1,0 +1,41 @@
+﻿@model SEV.Models.Venda
+
+@{
+    ViewData["Title"] = "Excluir Venda";
+}
+
+<div class="container mt-5">
+    <h2 class="text-danger mb-4">
+        <i class="bi bi-exclamation-triangle-fill"></i> Confirmar Exclusão
+    </h2>
+
+    <div class="alert alert-warning">
+        Tem certeza que deseja excluir esta venda? Essa ação não pode ser desfeita.
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3 text-secondary">Produto</dt>
+                <dd class="col-sm-9">@Model.Produto?.Nome</dd>
+
+                <dt class="col-sm-3 text-secondary">Quantidade</dt>
+                <dd class="col-sm-9">@Model.Quantidade</dd>
+
+                <dt class="col-sm-3 text-secondary">Data</dt>
+                <dd class="col-sm-9">@Model.Data.ToString("dd/MM/yyyy")</dd>
+            </dl>
+        </div>
+    </div>
+
+    <form asp-action="Delete" class="mt-4">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger me-2">
+            <i class="bi bi-trash"></i> Excluir
+        </button>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Cancelar
+        </a>
+    </form>
+</div>
+s
